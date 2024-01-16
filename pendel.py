@@ -38,6 +38,7 @@ locations = {
     'New York': 40.7128,
     'Tokio': 35.6895,
     'Kenia': -1.2921,
+    'Kapstadt': -33.918861,  # Koordinaten für Kapstadt
 }
 
 selected_location = st.selectbox('Wähle eine Location:', list(locations.keys()))
