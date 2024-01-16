@@ -11,8 +11,9 @@ def foucault_equations(y, t, omega, g, l):
 
 def foucault_angular_velocity(omega_0, latitude):
     theta = np.deg2rad(latitude)
-    omega_pendulum = omega_0 * np.array([np.cos(theta), 0, np.sin(theta)])
-    return omega_pendulum
+    omega_pendulum_scalar = omega_0 * np.sin(theta)
+    omega_pendulum_vector = np.array([omega_pendulum_scalar * np.cos(theta), omega_pendulum_scalar * np.sin(theta), 0])
+    return omega_pendulum_vector
 
 def solve_pendulum(latitude):
     g = 9.81
@@ -44,7 +45,7 @@ locations = {
 
 selected_location = st.selectbox('Wähle eine Location:', list(locations.keys()))
 
-latitude = locations[selected_location]
+latitude = float(locations[selected_location])
 t, solution = solve_pendulum(latitude)
 
 # Plot
