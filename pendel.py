@@ -1,13 +1,7 @@
 import streamlit as st
 import numpy as np
-import matplotlib.pyplot as plt
-
-# Installiere scipy direkt in der Streamlit-Anwendung
-st.subheader("Installation von scipy...")
-st.code("!pip install scipy")
-
-# Importiere odeint nach der Installation
 from scipy.integrate import odeint
+import matplotlib.pyplot as plt
 
 def foucault_equations(y, t, omega, g, l):
     drdt = np.zeros(6)
@@ -49,10 +43,6 @@ locations = {
 selected_location = st.selectbox('Wähle eine Location:', list(locations.keys()))
 
 latitude = locations[selected_location]
-
-# Erneutes Importieren von odeint, nachdem scipy installiert wurde
-from scipy.integrate import odeint
-
 t, solution = solve_pendulum(latitude)
 
 # Plot
