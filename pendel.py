@@ -32,13 +32,14 @@ st.title('Foucaultsches Pendel Simulation')
 
 locations = {
     'Nordpol': 90,
+    'Südpol': -90,
     'Innsbruck': 47.2682,
     'Barcelona': 41.3851,
     'London': 51.5099,
     'New York': 40.7128,
     'Tokio': 35.6895,
     'Kenia': -1.2921,
-    'Kapstadt': -33.918861,  # Koordinaten für Kapstadt
+    'Kapstadt': -33.918861,
 }
 
 selected_location = st.selectbox('Wähle eine Location:', list(locations.keys()))
