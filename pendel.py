@@ -17,7 +17,7 @@ def foucault_angular_velocity(omega_0, latitude):
 
 def solve_pendulum(latitude):
     g = 9.81
-    l = 2
+    l = 0.6
 
     t_span = np.linspace(0, 3600, 1000)
     omega_0 = 2 * np.pi / (24 * 3600)
